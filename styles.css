@@ -12,6 +12,10 @@
     opacity: 0.6;
 }
 
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: 15px;
+}
 
 body {
     margin: 0;
@@ -26,15 +30,15 @@ body {
 div.top-nav {
     width: 100%;
     background-color: #1d96c9;
-    overflow: hidden;
     white-space: nowrap;
     border-bottom: 16px solid var(--header-back);
 }                                                                                                                                                               
 
-.top-nav-refs ul {
+.top-nav-refs ul, .top-nav-refs-right-align ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
 .top-nav-refs {
@@ -60,13 +64,13 @@ div.top-nav {
     display: flex;
 }
 
-.top-nav-refs div {
+div.top-nav-refs-right-align {
     position: absolute;
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
     right: 0;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    flex-grow: 1;
 }
 
 @media screen and (min-width: 1400px) {
@@ -85,10 +89,14 @@ div.top-nav {
     }
 }
 
-.last-top-nav-elems > li{
+li.last-top-nav-elems {
     float: left;
     margin-left: 20px;
-    padding-right: 32px;
+}
+
+#top-nav-elem-tel {
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 button.top-nav-elem, .top-nav-elem > li > button > span {
@@ -114,6 +122,14 @@ button.top-nav-elem{
     text-align: left;
 }
 
+.top-nav-elem > li > a, .top-nav-refs-right-align > a {
+    transition: color 0.2s ease;
+}
+
+.top-nav-elem> li > a:hover, .top-nav-refs-right-align > a:hover {
+    color: #fff;
+}
+
 button.top-nav-elem {
     cursor: pointer;
 }
@@ -137,8 +153,17 @@ button.top-nav-elem {
 }
 
 #top-nav-elem-button {
+    display: flex;
     color: #fff;
     transition: color 0.2s ease;
+}
+
+button.top-nav-elem svg {
+    transition: fill 0.2s ease;
+}
+
+button.top-nav-elem:hover svg {
+    fill: var(--text-top-nav);
 }
 
 /* Header styles */
@@ -146,7 +171,6 @@ button.top-nav-elem {
 header {
     width: 100%;
     background-color: var(--header-back);
-    overflow: hidden;
 }
 
 .sticky-header-row {
@@ -197,12 +221,14 @@ header {
 }
 
 .header-catalog-div button {
+    cursor: pointer;
     border: 0;
     background-color: transparent;
     display: flex;
     font-size: 15px;
     padding: 10px 16px;
     line-height: 20px;
+    font-weight: 600;
 }
 
 .header-catalog-div svg {
@@ -223,6 +249,7 @@ header {
     position: relative;
     display: flex;
     flex-wrap: nowrap;
+    flex-grow: 1;
 }
 
 .header-form-div-search > input {
@@ -241,6 +268,7 @@ header {
 }
 
 .header-form-div-search > button {
+    cursor: pointer;
     align-items: center;
     justify-content: center;
     background-color: var(--header-clickable-elem);
@@ -320,5 +348,37 @@ button[class^="header-controls-"] > span {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
+}
+
+.sticky-header-controls button {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sticky-header-controls button:hover {
+    color: var(--text-top-nav);
+}
+
+button[class^="header-controls-"] svg, button.header-profile-controls > svg {
+  transition: fill 0.2s ease;
+}
+
+button[class^="header-controls-"]:hover svg, button.header-profile-controls:hover > svg {
+  fill: var(--text-top-nav);
+}
+
+@media screen and (min-width: 1400px) {
+    .sticky-header-row {
+        max-width: 1296px;
+        padding: 12px 0;
+    }
+
+    .header-catalog-div {
+        margin-right: 16px;
+    }
+
+    .header-logo {
+        margin-right: 32px;
+    }
 }
 
