@@ -3,9 +3,12 @@
 }
 
 :root {
+    --full-white: #fff;
     --text-top-nav: #edf3f7;
+    --text-hover: #9ddbf8;
     --header-back: #26a9e0;
     --header-clickable-elem: #2660ab;
+    --header-button-hover: #225496;
 }
 
 ::placeholder {
@@ -127,7 +130,7 @@ button.top-nav-elem{
 }
 
 .top-nav-elem> li > a:hover, .top-nav-refs-right-align > a:hover {
-    color: #fff;
+    color: var(--full-white);
 }
 
 button.top-nav-elem {
@@ -135,7 +138,7 @@ button.top-nav-elem {
 }
 
 .svg-icon {
-    fill: #fff;
+    fill: var(--full-white);
     display: block;
     float: left;
     margin-right: 4px;
@@ -149,12 +152,12 @@ button.top-nav-elem {
 }
 
 #top-nav-elem-button:hover {
-    color: var(--text-top-nav);
+    color: var(--text-hover);
 }
 
 #top-nav-elem-button {
     display: flex;
-    color: #fff;
+    color: var(--full-white);
     transition: color 0.2s ease;
 }
 
@@ -163,7 +166,7 @@ button.top-nav-elem svg {
 }
 
 button.top-nav-elem:hover svg {
-    fill: var(--text-top-nav);
+    fill: var(--text-hover);
 }
 
 /* Header styles */
@@ -206,6 +209,7 @@ header {
 }
 
 .header-catalog-div {
+    cursor: pointer;
     margin-right: 12px;
     justify-items: center;
     display: flex;
@@ -216,12 +220,13 @@ header {
 }
 
 .header-catalog-div > button > span {
-    color: #fff;
+    color: var(--full-white);
     font-weight: 600;
 }
 
 .header-catalog-div button {
     cursor: pointer;
+    font-family: inherit;
     border: 0;
     background-color: transparent;
     display: flex;
@@ -231,8 +236,16 @@ header {
     font-weight: 600;
 }
 
+.header-catalog-div, .form-search-button {
+    transition: background-color 0.3s ease;
+}
+
+.header-catalog-div:hover, .form-search-button:hover {
+    background-color: var(--header-button-hover);
+}
+
 .header-catalog-div svg {
-    fill: #fff;
+    fill: var(--full-white);
     margin-right: 8px;
 }
 
@@ -282,7 +295,7 @@ header {
 }
 
 .form-search-button  > svg {
-    fill: #fff;
+    fill: var(--full-white);
 }
 
 .header-controls-div-profile {
@@ -296,7 +309,7 @@ header {
     border: 0;
     flex-direction: column;
     align-items: center;
-    color: #fff;
+    color: var(--full-white);
     padding: 0;
 }
 
@@ -310,7 +323,7 @@ header {
 }
 
 .header-controls-div-profile > button > svg {
-    fill: #fff;
+    fill: var(--full-white);
     display: block;
 }
 
@@ -332,19 +345,22 @@ button[class^="header-controls-"] {
     border: 0;
     flex-direction: column;
     align-items: center;
-    color: #fff;
+    color: var(--full-white);
     padding: 0;
     margin-left: 24px;
 }
 
+button[class^="header-controls-"], .header-profile-controls {
+    font-family: inherit;
+}
+
 button[class^="header-controls-"] > svg {
-    fill: #fff;
+    fill: var(--full-white);
 }
 
 button[class^="header-controls-"] > span {
     margin-top: 2px;
     display: block;
-    font-family: Inter, sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -356,7 +372,7 @@ button[class^="header-controls-"] > span {
 }
 
 .sticky-header-controls button:hover {
-    color: var(--text-top-nav);
+    color: var(--text-hover);
 }
 
 button[class^="header-controls-"] svg, button.header-profile-controls > svg {
@@ -364,7 +380,7 @@ button[class^="header-controls-"] svg, button.header-profile-controls > svg {
 }
 
 button[class^="header-controls-"]:hover svg, button.header-profile-controls:hover > svg {
-  fill: var(--text-top-nav);
+  fill: var(--text-hover);
 }
 
 @media screen and (min-width: 1400px) {
@@ -382,3 +398,97 @@ button[class^="header-controls-"]:hover svg, button.header-profile-controls:hove
     }
 }
 
+/* Nav panel styles */
+
+@keyframes menu-item-gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+nav {
+    width: 100%;
+    background-color: var(--header-back);
+}
+
+.nav-panel-row {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    max-width: 1440px;
+    align-items: center;
+}
+
+@media screen and (min-width: 1400px) {
+    .nav-panel-row {
+        max-width: 1296px;
+    }
+
+    .nav-panel-row > ul {
+        max-width: 1296px;
+        padding: 16px 0 26px;
+    }
+}
+
+.nav-panel-row > ul {
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.nav-panel-row > ul > a {
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+    color: var(--full-white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+#nav-panel-sertificate-gifts {
+    padding: 4px 10px;
+    gap: 8px;
+}
+
+#nav-panel-sertificate-gifts > svg{
+    fill: var(--full-white);
+}
+
+#nav-panel-chitay-school {
+    gap: 4px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: linear-gradient(69.45deg, #94c2ea,  #f5b5d9 54.28%, #b6a6db 95.72%);
+    color: #000;
+}
+
+.nav-panel-row > ul > a, #nav-panel-sertificate-gifts svg{
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-panel-row > ul > a:hover {
+    color: var(--text-hover);
+}
+
+#nav-panel-sertificate-gifts:hover > svg {
+    fill: var(--text-hover);
+}
+
+#nav-panel-chitay-school:hover {
+    animation: menu-item-gradient 4s ease .2s infinite;
+    background-size: 400% 400%;
+}
