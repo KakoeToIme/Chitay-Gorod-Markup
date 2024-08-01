@@ -10,6 +10,7 @@
     --header-clickable-elem: #2660ab;
     --header-button-hover: #225496;
     --main-slider-button-color: #e9f6fc;
+    --color8: #1d96c9;
 }
 
 ::placeholder {
@@ -196,6 +197,9 @@ header {
 
 .header-logo-icon {
     display: flex;
+}
+
+.header-logo {
     align-items: center;
 }
 
@@ -217,8 +221,8 @@ header {
     border: 0;
     border-radius: 4px;
     background-color: var(--header-clickable-elem);
-    align-items: center;
 }
+
 
 .header-catalog-div > button > span {
     color: var(--full-white);
@@ -235,6 +239,7 @@ header {
     padding: 10px 16px;
     line-height: 20px;
     font-weight: 600;
+    align-items: center;
 }
 
 .header-catalog-div, .form-search-button {
@@ -500,8 +505,10 @@ nav {
     width: 100%;
 }
 
+/* Main page ad panel styles*/
+
 .main-ad-panel {
-    padding: 24px 32px;
+    padding-top: 24px;
     display: flex;
     max-width: 1440px;
     align-items: center;
@@ -638,3 +645,97 @@ button[class^="main-ad-panel-slider-button-"] svg {
         color: var(--full-white);
     }
 } 
+
+/* Main page product shelf styles*/
+
+.product-shelf-new-literature {
+    max-width: 1440px;
+    align-items: center;
+}
+
+.new-literature-header {
+    display: flex;  
+    align-items: center;
+    position: relative;
+}
+
+@media screen and (min-width: 1400px) {
+    .product-shelf-new-literature {
+        max-width: 1296px;
+        margin: 0 auto;
+    }
+
+    .new-literature-header {
+        margin: 0 auto 40px auto;
+    }
+
+    .new-literature-shelf-cards {
+        margin: 0 auto 80px auto;
+    }
+}
+
+.new-literature-shelf-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.new-literature-shelf-title:hover {
+    color: var(--header-back);
+}
+
+.new-literature-shelf-title {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 30px;
+    letter-spacing: 0.6px;
+    line-height: 132%;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.new-literature-shelf-all {
+    position: absolute;
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+    right: 0;
+    color: var(--header-back);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 144%;
+    transition: color 0.2s ease;
+}
+
+.new-literature-shelf-all:hover {
+    color: var(--color8);
+}
+
+.new-literature-shelf-all > span {
+    margin-left: 8px;
+    padding-right: 6px;
+}
+
+.new-literature-shelf-all > svg {
+    fill: var(--header-back);
+}
+
+
+.new-literature-shelf-cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*height: 536px;*/
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+div[class^="new-literature-card-"] {
+    padding: 0 8px;
+    flex: 0 0 16.6666666667%;
+    width: 16.6666666667%;
+}
+
+.new-literature-card-x-container {
+    padding: 0 8px;
+}
