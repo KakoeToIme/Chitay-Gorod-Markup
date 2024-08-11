@@ -11,6 +11,8 @@
     --header-button-hover: #225496;
     --main-slider-button-color: #e9f6fc;
     --color8: #1d96c9;
+    --color9: #707783;
+    --color10: #209cd1;
 }
 
 ::placeholder {
@@ -790,6 +792,7 @@ div[class^="new-literature-card-"] > a  {
 }
 
 .card-x-price-block {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
 }
@@ -876,4 +879,92 @@ div[class^="new-literature-card-"] > a  {
     padding-top: 6px;
     text-overflow: ellipsis;
     word-break: break-word;
+}
+
+.card-x-rating {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 12px;
+}
+
+.card-x-rating:hover {
+    cursor: pointer;
+}
+
+.card-x-star-rating {
+    display: flex;
+    margin-right: 9px;
+}
+
+.card-x-star-rating > svg > path {
+    fill: #fbb500;
+}
+
+.card-x-rating-count {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color9);
+}
+
+.card-x-buttons {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+    height: 36px;
+    letter-spacing: .02em;
+    line-height: 18px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.button-buy {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    color: var(--full-white);
+    background-color: var(--header-back);
+    margin-right: 8px;
+    border: 0px;
+    border-radius: 4px;
+    font-family: inherit;
+    justify-content: center;
+    padding: 0;
+    transition: color .2s ease, background-color .2s ease;
+    width: 100%;
+}
+
+.button-buy:hover {
+    background-color: var(--color10);
+}
+
+.button-buy > span {
+    color: inherit;
+    text-align: center;
+}
+
+.add-to-bookmarks {
+    flex-shrink: 0;
+    height: 36px;
+    width: 36px;
+    cursor: pointer;
+    background-color: #ecf6fe;
+    color: #26a9e0;
+    display: flex;
+    font-family: inherit;
+    justify-content: center;
+    padding: 0;
+    transition: color .2s ease, background-color .2s ease;
+    border: 0;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.add-to-bookmarks > svg > path {
+    stroke: var(--header-back);
+}
+
+.add-to-bookmarks:hover {
+    background-color: #def0ff;
 }
