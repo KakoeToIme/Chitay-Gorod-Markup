@@ -968,3 +968,36 @@ div[class^="new-literature-card-"] > a  {
 .add-to-bookmarks:hover {
     background-color: #def0ff;
 }
+
+.product-shelf-right-button {
+    left: calc(100% - 10px);
+}
+
+.product-shelf-left-button, .product-shelf-right-button {
+    top: calc(50% - 130px);
+    display: flex;
+    position: absolute;
+    transform: translate3d(-16px, -50%, 0);
+    z-index: 1;
+    background: #e9f6fc;
+    align-items: center;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 0 0 4px rgba(188, 228, 245, 0);
+    font-family: inherit;
+    height: 40px;
+    justify-content: center;
+    padding: 0;
+    transition: .2s ease;
+    width: 40px;
+    cursor: pointer;
+}
+
+.product-shelf-left-button svg, .product-shelf-right-button svg {
+    fill: var(--header-back);
+    transform: scale(.75);
+}
+
+.product-shelf-left-button:hover, .product-shelf-right-button:hover {
+    background: #c7e5fb;
+}
