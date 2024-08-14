@@ -187,6 +187,9 @@ button.top-nav-elem:hover svg {
 header {
     width: 100%;
     background-color: var(--header-back);
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .sticky-header-row {
@@ -356,6 +359,10 @@ header {
 }
 
 
+.header-profile-controls > span, button[class^="header-controls-"] > span {
+    display: none;
+}
+
 button[class^="header-controls-"] {
     background-color: transparent;
     display: flex;
@@ -375,11 +382,8 @@ button[class^="header-controls-"] > svg {
     fill: var(--full-white);
 }
 
-button[class^="header-controls-"] > span {
+button[class^="header-controls-"] > span, .header-profile-controls > span {
     margin-top: 2px;
-    display: block;
-    font-weight: 400;
-    font-size: 14px;
     line-height: 20px;
 }
 
@@ -412,6 +416,14 @@ button[class^="header-controls-"]:hover svg, button.header-profile-controls:hove
 
     .header-logo {
         margin-right: 32px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    button[class^="header-controls-"] > span, .header-profile-controls > span {
+        display: block;
+        font-weight: 400;
+        font-size: 14px;
     }
 }
 
